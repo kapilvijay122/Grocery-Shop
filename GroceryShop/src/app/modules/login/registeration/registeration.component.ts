@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { GroceryService } from '../service/grocery.service';
 import { User } from '../user';
-import { MustMatch } from 'Validators';
+import { MustMatch } from '../validation/password.validator';
 
 
 @Component({

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
+//import { GroceryService } from '../service/grocery.service';
+//import { User } from '../user';
+import {Router} from "@angular/router";
+import { User } from "../user";
+import { GroceryService } from "../service/groceryService";
 
 @Component({
   selector: 'app-login',
@@ -10,9 +15,9 @@ export class LoginComponent implements OnInit {
 
   loginForm:FormGroup;
   submitted = false;
- // user: User;
+  user: User;
   invalidLogin: boolean = false;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,private groceryService: GroceryService,private router:Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -28,7 +33,7 @@ get password() {
 }
 onSubmit() {
   this.submitted = true;
- // this.save(this.loginForm.controls["userName"].value,this.loginForm.controls["password"].value);
+  this.save(this.loginForm.controls["userName"].value,this.loginForm.controls["password"].value);
   if (this.loginForm.invalid) {
       return;
   }
@@ -40,8 +45,8 @@ onReset() {
 }
 
 
- /* save(userName:String,password:String) {
-   this.userService.getUserByUserName(userName)
+ save(userName:String,password:String) {
+   this.groceryService.getUserByUserName(userName)
      .subscribe(
        data => 
        {
@@ -59,10 +64,10 @@ onReset() {
            console.log("UserName Not Exists");
          }
          console.log(data);
-        // this.submitted = true;
+        this.submitted = true;
        },
        error => console.log(error));
- }*/
+ }
 
 }
  
