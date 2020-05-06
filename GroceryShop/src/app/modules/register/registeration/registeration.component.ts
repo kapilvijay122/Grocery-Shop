@@ -16,6 +16,7 @@ export class RegisterationComponent implements OnInit {
     registerForm:FormGroup;
     submitted = false;
      user : User =new User();
+     isFormSubmitted = false;
     constructor(private formBuilder: FormBuilder,private loginService: LoginService) { 
   
     }
@@ -77,7 +78,7 @@ export class RegisterationComponent implements OnInit {
      
       
       onSubmit() {
-     
+        this.isFormSubmitted = true;
       this.save();
       this.submitted = true;
     

@@ -7,6 +7,9 @@ import { CartDetailsComponent } from './modules/shopping-cart/cart-details/cart-
 import { ProductListComponent } from './modules/products/product-list/product-list.component';
 import { LoginComponent } from './modules/register/login/login.component';
 import { RegisterationComponent } from './modules/register/registeration/registeration.component';
+import { AdminboardComponent } from './modules/admin/adminboard/adminboard.component';
+import { PagenotfoundComponent } from './modules/register/pagenotfound/pagenotfound.component';
+import { AddproductComponent } from './modules/admin/addproduct/addproduct.component';
 
 
 const routes: Routes  = [
@@ -17,9 +20,11 @@ const routes: Routes  = [
   { path:'about-us', component:AboutUsComponent},
   { path:'contact-us', component:ContactUsComponent},
   { path:'product-list', component:ProductListComponent},
-  { path:'cart-details', component:CartDetailsComponent},,
+  { path:'cart-details', component:CartDetailsComponent},
+  { path:'adminboard', component:AdminboardComponent},
+  { path:'addproduct', component:AddproductComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: '**', redirectTo: '/home'}
+  {path: '**', component: PagenotfoundComponent }
 ];
 
 @NgModule({

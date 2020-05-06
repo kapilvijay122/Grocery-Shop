@@ -11,6 +11,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FooterComponent } from './core/footer/footer/footer.component';
 import { HeaderComponent } from './core/header/header/header.component';
 import { AdminModule } from './modules/admin/admin.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -19,7 +20,8 @@ import { AdminModule } from './modules/admin/admin.module';
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { AdminModule } from './modules/admin/admin.module';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminModule
+    AdminModule,
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

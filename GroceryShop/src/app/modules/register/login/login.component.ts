@@ -52,12 +52,12 @@ onReset() {
          if(data['password']=== password || data['password']=== password )
          {
            console.log("Password Matching");
-           this.router.navigate(['/home']);
-         }
-         else if(data['password']==='admin1' || data['password']==='admin1')
-         {
-           this.invalidLogin = true;
            this.router.navigate(['/adminboard']);
+         }
+         else 
+         {
+           //this.invalidLogin = true;
+           this.router.navigate(['/registeration']);
          }
          console.log(data);
          this.submitted = true;

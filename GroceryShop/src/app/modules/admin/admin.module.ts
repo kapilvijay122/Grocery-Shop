@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
-import { AddProductsComponent } from './add-products/add-products.component';
 import { DeleteProductsComponent } from './delete-products/delete-products.component';
 import { ViewProductsComponent } from './view-products/view-products.component';
+import { AdminboardComponent } from './adminboard/adminboard.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AddProductsComponent, DeleteProductsComponent, ViewProductsComponent],
+  declarations: [ DeleteProductsComponent, ViewProductsComponent, AdminboardComponent, AddproductComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

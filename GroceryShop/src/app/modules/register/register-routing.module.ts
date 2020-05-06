@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { ForgetComponent } from './forget/forget.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 
@@ -10,8 +11,9 @@ import { ForgetComponent } from './forget/forget.component';
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'registeration', component: RegisterationComponent },
-    { path: 'forget/:userName', component: ForgetComponent }
-
+    { path: 'forget', component: ForgetComponent },
+    { path: 'pagenotfound', component: PagenotfoundComponent },
+    
 ];
 
 @NgModule({
@@ -19,4 +21,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class RegisterRoutingModule { }
-export const routingComponents = { LoginComponent,RegisterationComponent,ForgetComponent}
+export const routingComponents = { LoginComponent,RegisterationComponent,ForgetComponent,PagenotfoundComponent}
