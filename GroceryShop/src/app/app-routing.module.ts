@@ -10,6 +10,7 @@ import { RegisterationComponent } from './modules/register/registeration/registe
 import { AdminboardComponent } from './modules/admin/adminboard/adminboard.component';
 import { PagenotfoundComponent } from './modules/register/pagenotfound/pagenotfound.component';
 import { AddproductComponent } from './modules/admin/addproduct/addproduct.component';
+import { ProductdetailComponent } from './modules/admin/productdetail/productdetail.component';
 
 
 const routes: Routes  = [
@@ -23,8 +24,9 @@ const routes: Routes  = [
   { path:'cart-details', component:CartDetailsComponent},
   { path:'adminboard', component:AdminboardComponent},
   { path:'addproduct', component:AddproductComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: '**', component: PagenotfoundComponent }
+  { path:'productdetail/:productId', component:ProductdetailComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+ // {path: '**', component: PagenotfoundComponent }
 ];
 
 @NgModule({

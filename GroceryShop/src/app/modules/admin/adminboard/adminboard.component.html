@@ -1,3 +1,41 @@
+<div class="container">
+  <div class="row">
 
-<a routerLink="/addproduct" class="btn btn-link">Add Products</a>
+  <div class="card login shadow p-3 mb-5 bg-white rounded ">
+  <div class="card-body">
+  <p class="h4 mb-4">Show Products</p>
+  <a routerLink="/addproduct" class="btn btn-link">AddProduct</a> 
+  
+  <div class="container row">
+      <div class="col-md-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of productsRecieved">
+              <td>{{product.productId}}</td>
+              <td>{{product.productName}}</td>
+              <td>
+                  <button type="button" class="btn btn-primary" (click)="viewProduct(product.productId)">View Details</button>
+                 
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
 

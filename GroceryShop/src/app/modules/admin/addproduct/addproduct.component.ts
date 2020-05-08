@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 import { AdminService } from '../service/modules/admin/service/admin.service';
-import { HttpClient } from '@angular/common/http';
-import { Product } from '../products';
-
+import { FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { Product } from '../products'
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-addproduct',
@@ -11,22 +10,31 @@ import { Product } from '../products';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
+ 
+ 
+ 
   
-  addForm:FormGroup;
-  submitted = false;
-  private selectedFile;
+
+  constructor(private formBuilder: FormBuilder,private adminService:AdminService,private activedRoute: ActivatedRoute,
+    private router: Router ) { }
+ 
+  addProduct:FormGroup;
+  public selectedFile:any=File;
+  product:Product;
   imgURL: any;
-  user : Product =new Product();
-  constructor(private formBuilder: FormBuilder,private adminService: AdminService,private httpClient: HttpClient) { }
+  action: string;
+  productsRecieved: Array<Product>;
 
+  
   ngOnInit() {
+    this.addProduct = this.formBuilder.group({
+      productName:['',Validators.required],
+      price:['',Validators.required],
+      quantity:['',Validators.required],
 
-    this.addForm = this.formBuilder.group({
-      name: ['', Validators.required,],
-      number: ['', Validators.required],
-      price:['',Validators.required]
   });
 }
+
 public onFileChanged(event) {
   console.log(event);
   this.selectedFile = event.target.files[0];
@@ -36,32 +44,23 @@ public onFileChanged(event) {
   reader.onload = (event2) => {
     this.imgURL = reader.result;
   };
+
+}
+onUpload()
+{
+const formData=new FormData();
+formData.append('value',JSON.stringify( this.addProduct.value));
+formData.append('file',this.selectedFile);
+this.adminService.addProduct(formData)
+.subscribe(
+  data=>{
+    console.log(data);
+    
+  },
+  error=>{
+    console.log(error);
+  }
+);
+}
 }
 
-get name() {
-  return this.addForm.get('name');
-}
-get number() {
-  return this.addForm.get('number');
-}
-get price() {
-  return this.addForm.get('price');
-}
-saveFile(submitForm:FormGroup)
-{
-if(submitForm.valid)
-{
-  const user=submitForm.value;
-  const formData =new FormData();
-  formData.append('user',user);
-  formData.append('file',this.selectedFile);
-  this.adminService.createProduct(formData).subscribe((response) =>
-  {
-    console.log(response);
-  });
-}
-else{
-  console.log("Invalid");
-}
-}
-}

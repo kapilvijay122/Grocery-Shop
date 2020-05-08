@@ -1,7 +1,8 @@
 export class Product{
-    id : number;
-    name: String;
-    number : number;
-    price: number;
-    picByte: string; 
+    productName: String;
+    price:number;
+    quantity:number;
+    retrievedImage: string;
+    fileImage:string;
+  productId: number;
 }

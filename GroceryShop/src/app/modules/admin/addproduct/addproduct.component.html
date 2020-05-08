@@ -1,44 +1,45 @@
 <div class="container">
-        <div class="row">
-            <div class="offset-2 col-6">
-                <div class="card login shadow p-3 mb-5 bg-white rounded ">
-                    <div class="card-body">
-<form [formGroup]="addForm">
-        <p class="h4 mb-4">Add Product</p>
-
-        <div class="form-group">
-            <label>Product Name</label>
-            <input type="name" class="form-control" formControlName="name" [class.is-invalid]="submitted && name.invalid">
-            <div *ngIf="name.touched && name.errors">
-                <div *ngIf="name.errors.required" class="text-danger">Product name is required</div>
-            </div>
+    <div class="row">
+    <div class="offset-2 col-6">
+    <div class="card login shadow p-3 mb-5 bg-white rounded ">
+    <div class="card-body">
+    <form [formGroup]="addProduct">
+    <p class="h4 mb-4">Add Product</p>
+    
+      <div class="form-group" >
+        <label>ProductName</label>
+        <input type="text" class="form-control" formControlName="productName" placeholder="productName" [class.is-invalid]="submitted && productName.invalid">
+        <div *ngIf="productName?.touched && productName.errors">
+        <div *ngIf="productName?.errors.required" class="text-danger">Name is required</div>
+        </div>
         </div>
         <div class="form-group">
-                <label>Product Number</label>
-                <input type="number" class="form-control" formControlName="number" [class.is-invalid]="submitted && number.invalid">
-                <div *ngIf="number.touched && number.errors">
-                    <div *ngIf="number.errors.required" class="text-danger">Product number is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                    <label>Product Price</label>
-                    <input type="price" class="form-control" formControlName="price" [class.is-invalid]="submitted && price.invalid">
-                    <div *ngIf="price.touched && price.errors">
-                        <div *ngIf="price.errors.required" class="text-danger">Product number is required</div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="file" class="form-control" accept="image/*" (change)="onFileChanged($event)">
-                    <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
-                </div>
-              <div class="text-center">
-                    <button class="btn btn-primary mr-1 align-right" (click)="saveFile(addForm)">Save</button>
-              </div>
-            </form>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <label>Price</label>
+            <input type="number" class="form-control" formControlName="price"  placeholder="price" [class.is-invalid]="submitted && price.invalid" >
+            <div *ngIf="price?.touched && price.errors">
+            <div *ngIf="price?.errors.required" class="text-danger">price is required</div>
+        </div>
+        </div>
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" class="form-control" formControlName="quantity"  placeholder="quantity" [class.is-invalid]="submitted && quantity.invalid" >
+            <div *ngIf="quantity?.touched && quantity.errors">
+            <div *ngIf="quantity?.errors.required" class="text-danger">price is required</div>
+        </div>
+        </div>
+        <br>
 
-
+     <input type="file" (change)="onFileChanged($event)">
+        <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
+         <br>
+        <div class="center">
+            <button class="btn btn-primary mr-1 align-right" (click)="onUpload()" >Save</button>
+        </div>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+       
