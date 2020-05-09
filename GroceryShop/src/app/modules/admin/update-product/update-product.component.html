@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+    <div class="offset-2 col-6">
+    <div class="card login shadow p-3 mb-5 bg-white rounded ">
+    <div class="card-body">
+    <form [formGroup]="updateProduct" (ngSubmit)="onSubmit()">
+    <p class="h4 mb-4">Update Product</p>
+    
+      <div class="form-group" >
+        <label>ProductName</label>
+        <input type="text" class="form-control" formControlName="productName" placeholder="productName" [class.is-invalid]="submitted && productName.invalid">
+        <div *ngIf="productName?.touched && productName.errors">
+        <div *ngIf="productName?.errors.required" class="text-danger">Name is required</div>
+        </div>
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" class="form-control" formControlName="price"  placeholder="price" [class.is-invalid]="submitted && price.invalid" >
+            <div *ngIf="price?.touched && price.errors">
+            <div *ngIf="price?.errors.required" class="text-danger">price is required</div>
+        </div>
+        </div>
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" class="form-control" formControlName="quantity"  placeholder="quantity" [class.is-invalid]="submitted && quantity.invalid" >
+            <div *ngIf="quantity?.touched && quantity.errors">
+            <div *ngIf="quantity?.errors.required" class="text-danger">price is required</div>
+        </div>
+        </div>
+        <div class="center">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>

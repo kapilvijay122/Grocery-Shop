@@ -5,13 +5,14 @@ import { AdminboardComponent } from './adminboard/adminboard.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 
 
 
 
 @NgModule({
-  declarations: [AdminboardComponent, AddproductComponent, ProductdetailComponent],
+  declarations: [AdminboardComponent, AddproductComponent, ProductdetailComponent, UpdateProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -26,4 +26,9 @@ export class AdminService {
   {
     return this.http.delete(`${this.baseUrl}/${productId}`);
   }
+
+  updateProduct(productId: number, value: any): Observable<any> 
+  {
+    return this.http.put(`${this.baseUrl}/${productId}`, value);
+  }
 }

@@ -94,5 +94,9 @@ export class AdminboardComponent implements OnInit {
   
     this.router.navigate(['/productdetail',productId]);
   }
+
+  updateProductDetail(productId: number) {
+    this.router.navigate(['/update-product', productId]);
+  }
   }
 
