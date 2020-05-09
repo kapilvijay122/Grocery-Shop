@@ -94,10 +94,5 @@ export class AdminboardComponent implements OnInit {
   
     this.router.navigate(['/productdetail',productId]);
   }
-  deleteProduct(productId: number) 
-  {
-  
-    this.router.navigate(['/productdetail',productId]);
   }
 
-}
