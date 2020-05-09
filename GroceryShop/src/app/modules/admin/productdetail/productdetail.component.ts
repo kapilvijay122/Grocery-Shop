@@ -1,9 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../Product';
-import { Observable } from 'rxjs';
 import { AdminService } from '../service/modules/admin/service/admin.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { ProductsRoutingModule } from '../../products/products-routing.module';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
