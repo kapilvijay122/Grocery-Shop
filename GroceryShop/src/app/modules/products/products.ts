@@ -1,9 +1,10 @@
 export class Product {
     id: number;
     name: string;
-   number: number;
+    number: number;
     price: number;
-    picByte: string;   
-    retrievedImage: string; 
+    picByte: string;
+    retrievedImage: string;
     isAdded: boolean;
-    }
+    fileImage?: string;
+}
