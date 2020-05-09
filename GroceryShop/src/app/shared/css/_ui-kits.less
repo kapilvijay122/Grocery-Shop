@@ -58,7 +58,7 @@ input.form-control{
 }
 
 a.nav-link{
-  color:@secondary-color!important;
+  color:@black-color!important;
   &:hover{
     color: @primary-color!important;
   }
@@ -69,4 +69,22 @@ a.nav-link.is-active{
 .bg-dark{
   background-color: @black-color!important;
 }
-
+.bg-white{
+  background-color: @white-color;
+}
+.box-shadow{
+  box-shadow: 0px 3px 10px 1px fade(@secondary-color, 50%);
+}
+.input--search{
+  border: 1px solid fade(@secondary-color, 75%);
+  border-radius: 2px;
+  &:after{
+    content: "\f002";
+    .font-awesome();
+    padding: 5px 10px;
+  }
+  input{
+    border:none;
+    box-shadow: none!important;
+  }
+}

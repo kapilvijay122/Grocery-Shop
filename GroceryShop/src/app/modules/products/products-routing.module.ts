@@ -7,10 +7,10 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 const routes: Routes = [
   {
-    path:'product-list', component:ProductListComponent
+    path:'products', component:ProductListComponent
   },
   {
-    path:'product-details', component:ProductDetailsComponent
+    path:'products/:id', component:ProductDetailsComponent
   },
 ];
 
