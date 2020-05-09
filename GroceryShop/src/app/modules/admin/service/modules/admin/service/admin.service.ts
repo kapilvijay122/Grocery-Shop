@@ -22,5 +22,8 @@ export class AdminService {
   {
     return this.http.get(`${this.baseUrl}/${productId}`);
   }
-
+  deleteProductByProductId(productId: number): Observable<any> 
+  {
+    return this.http.delete(`${this.baseUrl}/${productId}`);
+  }
 }

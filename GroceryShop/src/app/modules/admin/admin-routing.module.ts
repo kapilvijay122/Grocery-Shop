@@ -6,10 +6,12 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
 
 
 
+
 const routes: Routes = [
   { path:'adminboard',component:AdminboardComponent },
   { path:'addproduct',component:AddproductComponent },
   { path:'productdetail/:productId',component:ProductdetailComponent },
+  
   
 ];
 

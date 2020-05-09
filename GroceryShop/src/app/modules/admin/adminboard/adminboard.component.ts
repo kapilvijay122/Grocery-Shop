@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../service/modules/admin/service/admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../Product'
+import { TemplateRef } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-adminboard',
@@ -15,11 +18,14 @@ export class AdminboardComponent implements OnInit {
   selectedProduct: Product;
   action: string;
   productsRecieved: Array<Product>;
+  modalRef: BsModalRef;
+  message: string;
 
 
   constructor(private adminService: AdminService,
     private activedRoute: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,private modalService: BsModalService,
+    private dom : DomSanitizer) { }
 
   ngOnInit() {
    
@@ -66,9 +72,10 @@ export class AdminboardComponent implements OnInit {
      // var uints = new UInt8Array(fileImage);
       //var base64 = btoa(String.fromCharCode(null, uints));
       //var url = 'data:image/jpeg;base64,' + base64
+      var image: any;
      const productwithRetrievedImageField = new Product();
      productwithRetrievedImageField.productId = products.productId;
-    productwithRetrievedImageField.productName = products.productName;
+    productwithRetrievedImageField.productName = products.productName;  
     productwithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + products.fileImage;
     productwithRetrievedImageField.price = products.price;
     productwithRetrievedImageField.quantity = products.quantity;
@@ -83,6 +90,11 @@ export class AdminboardComponent implements OnInit {
     this.router.navigate(['/addproduct'], { queryParams: { action: 'add' } });
   }
   viewProduct(productId: number) 
+  {
+  
+    this.router.navigate(['/productdetail',productId]);
+  }
+  deleteProduct(productId: number) 
   {
   
     this.router.navigate(['/productdetail',productId]);

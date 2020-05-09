@@ -9,6 +9,7 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
 
 
 
+
 @NgModule({
   declarations: [AdminboardComponent, AddproductComponent, ProductdetailComponent],
   imports: [
