@@ -1,4 +1,9 @@
 @import "./_variables.less";
+@import (css) url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+
+body{
+  font-family:@primary-font, sans-serif;
+}
 
 .btn {
     border-radius: 0;
@@ -19,6 +24,10 @@
     transition:0.3s ease;
     &:focus{
       box-shadow:none;
+    }
+    &.btn-min{
+      padding: 3px 10px!important;
+      min-height: auto;
     }
 }
 .btn.btn-primary {
@@ -51,10 +60,13 @@ input.form-control{
 a.nav-link{
   color:@secondary-color!important;
   &:hover{
-    color: @primary-color;
+    color: @primary-color!important;
   }
 }
 a.nav-link.is-active{
   color: @primary-color!important;
+}
+.bg-dark{
+  background-color: @black-color!important;
 }
 
