@@ -21,10 +21,10 @@
         </div>
         </div>
         <div class="form-group">
-            <label>Quantity</label>
-            <input type="number" class="form-control" formControlName="quantity"  placeholder="quantity" [class.is-invalid]="submitted && quantity.invalid" >
-            <div *ngIf="quantity?.touched && quantity.errors">
-            <div *ngIf="quantity?.errors.required" class="text-danger">price is required</div>
+            <label>Product Id</label>
+            <input type="number" class="form-control" formControlName="productId"  placeholder="productId" [class.is-invalid]="submitted && productId.invalid" >
+            <div *ngIf="productId?.touched && quantity.errors">
+            <div *ngIf="productId?.errors.required" class="text-danger">productId is required</div>
         </div>
         </div>
         <div class="center">
