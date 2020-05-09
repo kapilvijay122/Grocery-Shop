@@ -14,14 +14,11 @@ import { AdminModule } from './modules/admin/admin.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
