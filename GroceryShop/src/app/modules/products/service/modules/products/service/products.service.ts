@@ -30,7 +30,7 @@ export class ProductsService {
    * @memberof ProductsService
    */
   getProductById(id: number): Observable<Product> {
-    let productUrl = "https://73aa56e1-d7e9-4aca-9e58-79e8ce86604c.mock.pstmn.io/new-products/2";
+    let productUrl = "https://7c3f7955-c1d2-443f-a084-c934a805219f.mock.pstmn.io/new-products/2";
     return this.httpClient.get(productUrl) as Observable<Product>;
   }
 

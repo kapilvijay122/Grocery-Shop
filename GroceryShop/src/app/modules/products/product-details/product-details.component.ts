@@ -6,10 +6,11 @@ import { Product } from '../products';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+  styleUrls: ['./product-details.component.less']
 })
 export class ProductDetailsComponent implements OnInit {
   productId: number;
+  productQuantity = 1;
   productDetail: Product;
 
   constructor(private router: Router,
@@ -47,9 +48,26 @@ export class ProductDetailsComponent implements OnInit {
       this.productService.getProductById(id).subscribe((response: Product) => {
         if (response) {
           this.productDetail = response;
+          if (this.productDetail.fileImage) {
+            this.productDetail.imageUrl = "data:image/png;base64," + this.productDetail.fileImage;
+          }
         }
       });
     }
+  }
+
+  increamentQuantity(): void {
+    this.productQuantity = this.productQuantity + 1;
+  }
+
+  decreamentQuantity(): void {
+    if (this.productQuantity > 1) {
+      this.productQuantity = this.productQuantity - 1;
+    }
+  }
+
+  addToCart():void{
+    alert(`${this.productDetail.productName} added to Cart`);
   }
 
 }

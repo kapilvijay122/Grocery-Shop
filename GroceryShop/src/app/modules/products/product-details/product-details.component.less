@@ -1,0 +1,56 @@
+
+@import "../../../shared/css/_variables.less";
+.product-image-container{
+    text-align: center;
+    img{
+        height: 290px;
+    }
+}
+.product-name{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.product-price{
+    font-size: 24px;
+    color: @primary-color;
+    display: block;
+}
+
+.product-price,.product-description,.product-qty{
+    margin-bottom: 30px;
+}
+.product-qty{
+    .input-group{
+        input{
+            max-width: 50px;
+            border: none;
+            box-shadow: none;
+            text-align: center;
+            background-color: fade(@secondary-color, 50%);
+            border-left: 1px solid fade(@secondary-color,25%);
+            border-right: 1px solid fade(@secondary-color,25%);
+        }
+        .input-group-prepend,.input-group-append{
+            text-align: center;
+        }
+        .input-group-prepend .input-group-text{
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+        .input-group-append .input-group-text{
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+        .input-group-text{
+            font-size: 12px;
+            width: 35px;
+            line-height: 28px;
+            cursor: pointer;
+            border: none;
+            background-color: fade(@secondary-color, 50%);
+            &.disabled{
+                cursor: not-allowed;
+            }
+        }
+    }
+}

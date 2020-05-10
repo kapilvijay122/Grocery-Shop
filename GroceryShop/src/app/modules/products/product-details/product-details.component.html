@@ -1,1 +1,41 @@
-{{productDetail | json}}
+<div class="my-3">
+    <a class="nav-link" routerLink="../"> <span class="fa fa-chevron-left pr-2"></span> Back to Shop</a>
+</div>
+<div class="row" *ngIf="productDetail">
+    <div class="col-12 col-md-6">
+        <div class="product-image-container">
+            <img [src]="productDetail.imageUrl" [alt]="productDetail.productName">
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <h2 class="product-name">{{productDetail.productName}}</h2>
+        <strong class="product-price">{{productDetail.price|currency}}</strong>
+        <div class="product-description">
+            Ginger (Zingiber officinale) is a flowering plant whose rhizome, ginger root or ginger, is widely ...
+            whereas when the rhizome is planted for products such as dried ginger or ginger oil, harvesting must be done
+            eight to ten ... Language Description, History and Development: Linguistic indulgence in memory of Terry
+            Crowley.
+        </div>
+        <div class="product-qty">
+            <div>
+                <label class="font-weight-bold" for="productQuantity">Quantity</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span [class.disabled]="productQuantity<2" (click)="decreamentQuantity()" tabindex="0"
+                            class="input-group-text fa fa-minus" id="inputGroupDecrement"></span>
+                    </div>
+                    <input type="text" [(ngModel)]="productQuantity" class="form-control" id="productQuantity"
+                        aria-describedby="productQuantity">
+                    <div class="input-group-append">
+                        <span (click)="increamentQuantity()" tabindex="0" class="input-group-text fa fa-plus"
+                            id="inputGroupIncreament"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="product-actions">
+            <a (click)="addToCart()" class="btn btn-primary">ADD TO CART</a>
+        </div>
+    </div>
+</div>
