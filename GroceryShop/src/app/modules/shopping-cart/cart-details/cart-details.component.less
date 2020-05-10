@@ -1,1 +1,50 @@
 @import "../../../shared/css/_variables.less";
+.container-width{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.cart-promotions{
+    font-size: 14px;
+    padding:40px 20px;
+    background-color: fade(@primary-color, 15%);
+    margin-bottom: 30px;
+    .breadcrumb-link{
+        font-size: 12px;
+        padding: 3px 0;
+    }
+}
+.cart-promotions-title{
+    font-size: 18px;
+    font-weight: 600;
+}
+.cart-container{
+  
+    
+    .cart-header{
+        padding: 10px 10px;
+        background-color: @grey-color;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        
+    }
+    .cart-body{
+        font-size: 12px;
+        padding: 20px 10px;
+    }
+    .cart-total{
+        font-size: 18px;
+        font-weight: 600;
+        padding: 20px 10px;
+        color: @primary-color;
+    }
+    .cart-delete-icon{
+        float: right;
+        line-height: 16px;
+        cursor: pointer;
+    }
+    .cart-body:not(:last-child) {
+        border-bottom: 1px solid fade(#ccc, 45%);
+    }
+    
+}
